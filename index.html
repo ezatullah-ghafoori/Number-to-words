@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers To Words</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="getter" id="getter">
+            <p id="AlertP">Attention!! This program can count only in rage of &nbsp; 0 - 99999<span onclick="AlertP.style.display = 'none'">x</span></p>
+            <input autofocus type="number" onfocus="hideTooltip(getterToolTip)" onmouseenter="showTooltip(getterToolTip)" onmouseleave="hideTooltip(getterToolTip)" id="getNum" placeholder="Type a Number Here!" oninput="changeNum(this.value)"><br>
+            <span class="ToolTip" id="getterToolTip">Type A Number to Get The Result!</span>
+        </div>
+        <div class="resultOutPut" id="resultOutPut">
+            <span id="displaySpan" onmouseleave="hideTooltip(displayToolTip)" onmouseenter="showTooltip(displayToolTip)">The Result Will Dispaly here!</span><br>
+            <span class="ToolTip" id="displayToolTip">The Result Will Dispaly here!</span>
+        </div>
+
+    </main>
+
+    <script src="index.js"></script>
+
+    <!-- this Part of JavaScript is just for hiding and showing the tooltips in the browser -->
+    <script>
+        let timer;
+        const input = document.getElementById('getNum');
+        function showTooltip(tooltipElement){
+            timer = setTimeout(()=>{
+                tooltipElement.classList.add('showToolTip');
+            }, 1000)
+        }
+        function hideTooltip(tooltipElement){
+            clearTimeout(timer);
+            tooltipElement.classList.remove('showToolTip')
+        }
+
+    </script>
+</body>
+</html>
